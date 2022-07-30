@@ -3,9 +3,52 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const tailwindcss = require("tailwindcss");
 
 module.exports = {
   siteName: 'Money with Phil',
   siteUrl: 'https://www.philliprearick.com',
-  plugins: []
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          tailwindcss
+        ],
+      }
+    },
+  },
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: './src/posts/**/*.md',
+        typeName: 'Post',
+        remark: {
+          //Config options can be added here
+        }
+      }
+    },
+    {
+      use: "gridsome-plugin-tailwindcss",
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: false,
+        shouldTimeTravel: false
+      }
+    },
+  ],
+  templates: {
+    Post: [
+      {
+        path: '/blog/:title',
+        component: 'src/templates/Post.vue'
+      }
+    ],
+  },
+  transformers: {
+    remark: {
+      //Config options can be added here
+    }
+  },
 }

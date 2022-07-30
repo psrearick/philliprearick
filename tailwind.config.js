@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     './src/**/*.vue',
@@ -8,7 +10,14 @@ module.exports = {
   ],
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        slate: colors.blueGray,
+        amber: colors.amber,
+        emerald: colors.emerald,
+        test: colors.slate,
+      }
+    }
   },
   plugins: [],
 }

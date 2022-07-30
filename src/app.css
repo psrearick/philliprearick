@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind tailwind;
+@tailwind components;
+
+@layer base {
+    body {
+        @apply bg-slate-100
+    }
+
+    h1 {
+        @apply text-4xl py-4;
+    }
+
+    h2 {
+        @apply text-2xl py-4;
+    }
+
+    h3 {
+        @apply text-xl py-2
+    }
+
+    h4 {
+        @apply text-lg font-semibold py-2
+    }
+
+    p {
+        @apply py-1
+    }
+
+    a {
+        @apply text-blue-400 hover:underline
+    }
+
+    blockquote {
+        @apply border-l-4 border-blue-400 ml-4 my-2 p-4 bg-gray-200
+    }
+}

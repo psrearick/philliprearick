@@ -2,11 +2,15 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link to="/" class="text-gray-500 hover:no-underline">      
+          <g-image alt="Logo" src="~/favicon.png" width="45" class="mx-auto" />
+          {{ $static.metadata.siteName }}
+        </g-link>
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+        <!-- <g-link class="nav__link" to="/about/">About</g-link> -->
+        <g-link class="nav__link" to="/blog">Blog</g-link>
       </nav>
     </header>
     <slot/>

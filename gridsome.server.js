@@ -10,11 +10,12 @@ module.exports = function (api) {
 
     //Create a new "categories" collection
     const categories = actions.addCollection({
-      typeName: 'category'
+      typeName: 'Category'
     })
 
     //Get all the posts (which already exist from the vue-remark plugin)
     const allPosts = actions.getCollection('Post')._collection.data
+    actions.getCollection('Post').addReference('categories', 'Category')
 
     //Loop over the posts and add their categories to an array
     let allPostsCategories = []
@@ -27,6 +28,7 @@ module.exports = function (api) {
     uniqueCategories.forEach(category => {
       categories.addNode({
         title: category,
+        id: category,
         posts: allPosts.filter(post => post.categories.includes(category))
       })
     })

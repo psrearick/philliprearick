@@ -45,6 +45,12 @@ module.exports = {
         component: 'src/templates/Post.vue'
       }
     ],
+    Category: [
+      {
+        path: '/category/:title',
+        component: 'src/templates/Category.vue'
+      }
+    ],
   },
   transformers: {
     remark: {

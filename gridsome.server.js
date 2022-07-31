@@ -18,20 +18,20 @@ module.exports = function (api) {
     actions.getCollection('Post').addReference('categories', 'Category')
 
     //Loop over the posts and add their categories to an array
-    let allPostsCategories = []
-    allPosts.forEach(post => allPostsCategories.push(...post.categories))
+  //   let allPostsCategories = []
+  //   allPosts.forEach(post => allPostsCategories.push(...post.categories))
 
-    //Filter out duplicates
-    const uniqueCategories = new Set(allPostsCategories)
+  //   //Filter out duplicates
+  //   const uniqueCategories = new Set(allPostsCategories)
 
-    //Finally, add each category as a data node, with an array of the matching posts
-    uniqueCategories.forEach(category => {
-      categories.addNode({
-        title: category,
-        id: category,
-        posts: allPosts.filter(post => post.categories.includes(category))
-      })
-    })
+  //   //Finally, add each category as a data node, with an array of the matching posts
+  //   uniqueCategories.forEach(category => {
+  //     categories.addNode({
+  //       title: category,
+  //       id: category,
+  //       posts: allPosts.filter(post => post.categories.includes(category))
+  //     })
+  //   })
   })
 
   api.createPages(({ createPage }) => {

@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <h1 v-html="$page.post.title" />
-        <div class="flex gap-4 my-4">
+        <div class="flex flex-wrap gap-4 my-4">
             <g-link
                 v-for="(category, catIndex) in $page.post.categories"
                 :key="catIndex"
@@ -19,13 +19,14 @@
                 <p class="text-sm font-bold">{{ $page.post.timeToRead }} minutes</p>
             </div>
         </div>
-        <div v-html="$page.post.content" />
+        <!-- <div v-html="$page.post.content" /> -->
+        <VueRemarkContent />
     </Layout>
 </template>
 
 <page-query>
-query ($id: ID!) {
-  post(id: $id) {
+query Post ($id: ID!) {
+  post: post(id: $id) {
     title
     content
     categories { title, path }

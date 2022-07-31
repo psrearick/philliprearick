@@ -4,7 +4,9 @@ title: Portfolio Asset Allocation
 categories: [stocks, bonds, allocation, portfolio, investing]
 summary: How to allocate and optimize your investment portfolio assets
 date: "2022-07-30"
+timeToRead: 34
 ---
+import AssetClassStats from '~/components/tables/AssetClassStats.vue'
 ## Introduction
 It is essential to know how to manage your portfolio. Even if someone does it for you, it helps to understand why the manager makes their decisions. People often view portfolio management as some mystical practice that you can do only after many years of school. Financial advisors make money by convincing people that managing their investments is too complex. This claim is not valid, though. Anyone can do it.
 
@@ -214,7 +216,7 @@ This section will explain a series of calculations I made to develop diversified
 
 [PortfolioVisualizer](https://www.portfoliovisualizer.com) is a website that hosts many helpful tools for building portfolios. Using the [Backtest Portfolio Asset Class Allocation](https://www.portfoliovisualizer.com/backtest-asset-class-allocation) tool, I calculated the risk and return of many key asset classes. While the data can go back to 1972, not every asset class is available that far back, so I used the tool multiple times to get as many asset classes as possible on various timeframes. For the return, I used the compound annual growth rate, or CAGR, an investment's mean yearly growth rate over a specified time longer than one year. For the risk, I used the standard deviation, a measure of volatility. The standard deviation is the average amount by which individual data points differ from the mean; in other words, it is the spread of an asset's price from its average price. If the standard deviation is high, the asset's price is more volatile and, therefore, risky. Below is a table of each asset class's CAGR and Standard Deviation for various periods.
 
-**—\> TABLE \<—**
+<AssetClassStats />
 
 For each period, I rank each asset class as a decimal number between 0 and 1, representing its relative position in the distribution in asset class CAGRs. So, the asset with the highest CAGR would be a 1, whereas the lowest would be a 0. The class with the median CAGR would be 0.5. I then did the same for the standard deviation but inverted it because the lower standard deviations are better. So, a slight standard deviation would have a higher rank. Below is a table with each asset class's position.
 

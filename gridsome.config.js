@@ -18,13 +18,28 @@ module.exports = {
     },
   },
   plugins: [
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: './src/posts/**/*.md',
+    //     typeName: 'Post',
+    //     remark: {
+    //       //Config options can be added here
+    //     }
+    //   }
+    // },
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
-        path: './src/posts/**/*.md',
-        typeName: 'Post',
-        remark: {
-          //Config options can be added here
+        typeName: 'Post', // Required
+        baseDir: './src/posts', // Where .md files are located
+        pathPrefix: '/blog', // Add route prefix. Optional
+        template: './src/templates/Post.vue', // Optional
+        refs: {
+          categories: {
+            typeName: 'Category',
+            create: true
+          }
         }
       }
     },
@@ -39,12 +54,12 @@ module.exports = {
     },
   ],
   templates: {
-    Post: [
-      {
-        path: '/blog/:title',
-        component: 'src/templates/Post.vue'
-      }
-    ],
+    // Post: [
+    //   {
+    //     path: '/blog/:title',
+    //     component: 'src/templates/Post.vue'
+    //   }
+    // ],
     Category: [
       {
         path: '/category/:title',

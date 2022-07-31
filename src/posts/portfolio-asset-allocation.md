@@ -8,9 +8,14 @@ timeToRead: 31
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
 import AssetClassStatsRanked from '~/components/tables/AssetClassStatsRanked.vue'
+import AssetClassWeights from '~/components/tables/AssetClassWeights.vue'
 import AssetClassStatsAveraged from '~/components/tables/AssetClassStatsAveraged.vue'
 import AssetClassCorrelation from '~/components/tables/AssetClassCorrelation.vue'
-## Introduction
+import AssetClassAllocations from '~/components/tables/AssetClassAllocations.vue'
+import FundSelection from '~/components/tables/FundSelection.vue'
+import AssetClassPortfoliosRiskReturn from '~/components/tables/AssetClassPortfoliosRiskReturn.vue'
+
+
 It is essential to know how to manage your portfolio. Even if someone does it for you, it helps to understand why the manager makes their decisions. People often view portfolio management as some mystical practice that you can do only after many years of school. Financial advisors make money by convincing people that managing their investments is too complex. This claim is not valid, though. Anyone can do it.
 
 Constructing a sound portfolio can seem daunting. Do you go out and buy a stock? Which one? What if that stock fails? What if the stock market crashes? Should you instead split your money between multiple assets? How do you know which investments to choose? What percentage of your portfolio should go to each purchase? These are difficult questions to answer. And it is understandable to feel scared and overwhelmed trying to answer them. But they don't need to be scary. There are answers to these questions that you can figure out on your own.
@@ -233,7 +238,7 @@ Then, I took the average of its CAGR rank and standard deviation rank for each a
 
 Next, I created a table with columns counting by tens from zero to one hundred. So there is a column for 0, 10, 20, 30, and so on. I am using these numbers as weights to apply to the ratio of each asset class's CAGR and standard deviation. This way, I would have a score combining the characteristics of each column. For example, a 20 would add the CAGR score to the standard deviation score by multiplying the standard deviation by 20% and the CAGR by 80%. Below is a table with those results.
 
-**—\> TABLE \<—**
+<AssetClassWeights />
 
 I separated the asset classes into five groups: gold, REITs, bonds, international stocks, and U.S. stocks. Gold consistently underperformed, so I disregard that one. For each weighting, I selected each group's highest scoring asset class. For example, at a weighting of 10, I selected U.S. mid-cap stocks for the U.S. stocks group and International ex-US Small Cap for the international stocks group. The bond group is the least volatile, so I created weighted portfolios with one side being bonds and the other being everything else. I weighted the asset classes in the "everything else" group by their scores. For the 10-weight group, U.S. stocks scored 0.93, international stocks scored 0.67, and REIT scored 0.68. I took the category weighting, 90%, and divided it between the three asset classes, weighted according to their score. This calculation gave me the following results:
 
@@ -244,11 +249,11 @@ I separated the asset classes into five groups: gold, REITs, bonds, internationa
 
 The following table shows this calculation for each asset class of each weighting.
 
-**—\> TABLE \<—**
+<AssetClassAllocations />
 
 I used the portfolio backtest tool again, plugging in the weights for each asset class. I also did this by weighting the US Stock Market and Total US Bond Market as benchmarks. Below are the results from data going back to 1995.
 
-**—\> TABLE \<—**
+<AssetClassPortfoliosRiskReturn />
 
 Finally, I generated a scatter plot to show the risk/return for each portfolio.
 
@@ -263,7 +268,7 @@ Once you have decided on an allocation, you need to figure out which funds get y
 
 There are many resources online to help you find the exact funds to meet your needs; however, there are a few that I would recommend. Below is a table with several options.
 
-**—\> TABLE \<—**
+<FundSelection />
 
 Here are a few examples to get you thinking:
 

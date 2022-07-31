@@ -7,9 +7,15 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody v-if="data.data">
                 <tr v-for="(row, index) in data.data" :key="index">
                     <td v-for="(cell, cellIndex) in row" :key="cellIndex">{{ cell }}</td>
+                </tr>
+            </tbody>
+
+            <tbody v-for="(section, sectionIndex) in data.dataSections" :key="sectionIndex" class="border border-gray-600">
+                <tr v-for="(row, index) in section" :key="index">
+                    <td v-for="(cell, cellIndex) in row" :key="cellIndex" :class="boldCell(cellIndex)">{{ cell }}</td>
                 </tr>
             </tbody>
         </table>
@@ -26,6 +32,19 @@ export default {
         wide: {
             type: Boolean,
             default: false,
+        }
+    },
+    methods: {
+        boldCell: function (index) {
+            if (!this.data.boldColumns) {
+                return '';
+            }
+
+            if (this.data.boldColumns.indexOf(index) > -1) {
+                return 'font-bold';
+            }
+
+            return '';
         }
     },
 }

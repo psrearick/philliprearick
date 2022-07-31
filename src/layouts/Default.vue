@@ -1,6 +1,6 @@
 <template>
-  <div class="layout flex flex-col min-h-full">
-    <div class="flex-1">
+  <div class="flex flex-col min-h-full">
+    <div class="layout w-full flex-1">
     <header class="header">
       <strong>
         <g-link to="/" class="text-gray-500 hover:no-underline">
@@ -16,7 +16,7 @@
     </header>
     <slot />
     </div>
-    <div class="py-8 text-sm text-gray-500">
+    <div class="py-8 text-sm text-gray-500 w-3/4 mx-auto">
       <ul>
         <li>
           While I enjoy researching investing and finance-related data, I am not a financial professional. I have no

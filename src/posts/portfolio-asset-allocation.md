@@ -7,6 +7,7 @@ date: "2022-07-30"
 timeToRead: 31
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
+import AssetClassCorrelation from '~/components/tables/AssetClassCorrelation.vue'
 ## Introduction
 It is essential to know how to manage your portfolio. Even if someone does it for you, it helps to understand why the manager makes their decisions. People often view portfolio management as some mystical practice that you can do only after many years of school. Financial advisors make money by convincing people that managing their investments is too complex. This claim is not valid, though. Anyone can do it.
 
@@ -117,6 +118,8 @@ With a better understanding of what asset classes are available, it is essential
 Correlation is significant to consider when choosing an asset allocation. The best way to mitigate risk is by investing in multiple asset classes. But, if those classes are closely correlated, the added diversity may be helping less than you want. To limit risk, you should have the most significant portions of your portfolio have the most negligible correlation.
 
 Below is a table with a set of indices and their correlations with each other. An index is just a group of assets of a specific type. This table will help see how asset classes are correlated. The closer the value is to one, the greater the correlation is between the asset classes.
+
+<AssetClassCorrelation />
 
 ## Index Mutual Funds and ETFs
 Before looking at the specifics of picking an appropriate allocation, let's look at how even to acquire assets. Most assets, such as equities, can be purchased individually on the open market. Since the most remarkable growth comes from stocks, you should have some in your portfolio. However, equities have excellent upside potential and significant risk associated with them. What if you buy shares of a company and that company goes bankrupt? What if the stock value goes to zero? These are legitimate concerns. Stocks do fail sometimes. A better approach would be to buy shares in many different companies. How many? How diverse should your portfolio be? What if you pick five stocks, and they all fail? The solution to these concerns is investing in large market segments or the entire market. While equities may fail and sectors of the stock market may fail, the market in its entirety will not go to zero. As I'm sure you are aware, the market has crashed before. Several times it has dropped by significant amounts. Every time, however, it has come back. After a substantial crash, the average time it takes to return to its previous level is two years. The longest it has ever taken is five years. It always comes back. So, investing in a stock or even a handful of equities is risky. Investing in the stock market is significantly safer, which, on average, returns between 8% and 12% every year.

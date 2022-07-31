@@ -247,7 +247,7 @@ I used the portfolio backtest tool again, plugging in the weights for each asset
 
 Finally, I generated a scatter plot to show the risk/return for each portfolio.
 
-**—\> CHART \<—**
+![Portfolio Scatter Chart](../resources/images/PortfolioScatterChart.png)
 
 As you can see, the benchmark was close to or outperformed the more diversified portfolios, which leads me to believe that diversification can be helpful but is unnecessary. That is fine if you want a more diversified portfolio to smooth out your returns and mitigate risk. But I do not think it is critical to do that, and it seems it would be most helpful for low-risk portfolios.
 

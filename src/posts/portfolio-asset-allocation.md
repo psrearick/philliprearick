@@ -7,6 +7,8 @@ date: "2022-07-30"
 timeToRead: 31
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
+import AssetClassStatsRanked from '~/components/tables/AssetClassStatsRanked.vue'
+import AssetClassStatsAveraged from '~/components/tables/AssetClassStatsAveraged.vue'
 import AssetClassCorrelation from '~/components/tables/AssetClassCorrelation.vue'
 ## Introduction
 It is essential to know how to manage your portfolio. Even if someone does it for you, it helps to understand why the manager makes their decisions. People often view portfolio management as some mystical practice that you can do only after many years of school. Financial advisors make money by convincing people that managing their investments is too complex. This claim is not valid, though. Anyone can do it.
@@ -223,11 +225,11 @@ This section will explain a series of calculations I made to develop diversified
 
 For each period, I rank each asset class as a decimal number between 0 and 1, representing its relative position in the distribution in asset class CAGRs. So, the asset with the highest CAGR would be a 1, whereas the lowest would be a 0. The class with the median CAGR would be 0.5. I then did the same for the standard deviation but inverted it because the lower standard deviations are better. So, a slight standard deviation would have a higher rank. Below is a table with each asset class's position.
 
-**—\> TABLE \<—**
+<AssetClassStatsRanked />
 
 Then, I took the average of its CAGR rank and standard deviation rank for each asset class in each period. Below is a table with the average positions.
 
-**—\> TABLE \<—**
+<AssetClassStatsAveraged />
 
 Next, I created a table with columns counting by tens from zero to one hundred. So there is a column for 0, 10, 20, 30, and so on. I am using these numbers as weights to apply to the ratio of each asset class's CAGR and standard deviation. This way, I would have a score combining the characteristics of each column. For example, a 20 would add the CAGR score to the standard deviation score by multiplying the standard deviation by 20% and the CAGR by 80%. Below is a table with those results.
 

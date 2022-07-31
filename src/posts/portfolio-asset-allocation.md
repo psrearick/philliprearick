@@ -4,7 +4,7 @@ title: Portfolio Asset Allocation
 categories: [stocks, bonds, allocation, portfolio, investing]
 summary: How to allocate and optimize your investment portfolio assets
 date: "2022-07-30"
-timeToRead: 34
+timeToRead: 31
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
 ## Introduction

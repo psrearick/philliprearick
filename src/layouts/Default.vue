@@ -1,8 +1,9 @@
 <template>
-  <div class="layout">
+  <div class="layout flex flex-col min-h-full">
+    <div class="flex-1">
     <header class="header">
       <strong>
-        <g-link to="/" class="text-gray-500 hover:no-underline">      
+        <g-link to="/" class="text-gray-500 hover:no-underline">
           <g-image alt="Logo" src="~/favicon.png" width="45" class="mx-auto" />
           {{ $static.metadata.siteName }}
         </g-link>
@@ -13,7 +14,23 @@
         <g-link class="nav__link" to="/blog">Blog</g-link>
       </nav>
     </header>
-    <slot/>
+    <slot />
+    </div>
+    <div class="py-8 text-sm text-gray-500">
+      <ul>
+        <li>
+          While I enjoy researching investing and finance-related data, I am not a financial professional. I have no
+          formal financial education and am not a financial advisor, portfolio manager, or accountant.
+          The information on this website is for informational and recreational purposes only. Therefore, the provided
+          data does not constitute financial, investment, or tax advice. Investment products discussed (ETFs, index
+          funds, etc.) are for illustrative purposes only. It is not a recommendation to buy, sell, or otherwise
+          transact in any of the products mentioned.
+        </li>
+        <li>Past performance does not guarantee future returns.</li>
+        <li>Some content may contain affiliate or referral links.</li>
+        <li>I only feature services and apps that I use. </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -27,9 +44,9 @@ query {
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
 }
 

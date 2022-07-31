@@ -10,6 +10,7 @@ export default {
             data: {
                 headers: [['Asset Class', 'Category', 'Name', 'Ticker', 'Expense Ratio', 'Yield', 'Notes']],
                 boldColumns: [0],
+                stickyLeftColumns: [3],
                 data: [
                     ['Stocks', 'US Stock Market', 'Vanguard Total Stock Market ETF', 'VTI', '0.03%', '1.56%', 'Best Total Stock Market ETF'],
                     ['Stocks', 'US Stock Market', 'Vanguard High Dividend Yield ETF', 'VYM', '0.06%', '3.04%', 'Best Total Stock Market ETF for high-yield; twice the expense ratio of VTI'],

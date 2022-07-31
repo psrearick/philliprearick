@@ -10,6 +10,7 @@ export default {
             data: {
                 headers: [['Asset Class', 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]],
                 boldColumns: [0],
+                stickyLeftColumns: [0],
                 data: [
                     ['US Stocks', 0.40,0.37,0.33,0.29,0.26,0.22,0.19,0.15,0.11,0.06,0.00],
                     ['International Stocks', 0.29,0.26,0.24,0.21,0.18,0.15,0.11,0.08,0.06,0.03,0.00],

@@ -1,12 +1,32 @@
 <template>
     <Layout>
+        <div class="flex justify-between">
         <h1 v-html="$page.category.title" />
-        <div v-for="(post, index) in $page.category.belongsTo.edges" :key="index" class="my-2">
-            <g-link :to="post.node.path" class="text-xl">{{ post.node.title }}</g-link>
-            <p class="text-sm">{{ post.node.summary }}</p>
+        <div class="flex flex-col justify-center">
+            <p class="text-sm">
+                <g-link to="/blog" class="hover:no-underline border border-blue-400 rounded px-4 py-2 hover:border-blue-600 hover:text-blue-600">All Posts</g-link>
+            </p>
         </div>
+        </div>
+        <blog-list :posts="posts" />
     </Layout>
 </template>
+
+<script>
+import BlogList from '../components/BlogList.vue';
+export default {
+  components: { BlogList },
+    metaInfo() {
+        return { title: this.$page.category.title };
+    },
+    computed: {
+        posts() {
+            return this.$page.category.belongsTo.edges.map((edge) => edge.node);
+        },
+    }
+};
+</script>
+
 
 <page-query>
 query Category ($id: ID!) {
@@ -21,6 +41,8 @@ query Category ($id: ID!) {
                             date (format: "MMMM D, Y")
                             path
                             summary
+                            timeToRead
+                            categories { title, id, path }
                         }
                     }
                 }

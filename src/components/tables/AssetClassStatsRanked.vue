@@ -1,7 +1,7 @@
 <template>
-    <div class="asset-stats-table overflow-auto lg:-mx-24">
+    <div class="asset-stats-table overflow-auto lg:-mx-24 max-h-screen">
         <table class="text-xs text-center my-4 overflow-x-scroll table-auto w-full">
-            <thead>
+            <thead class="sticky top-0 z-10 bg-gray-100">
                 <tr class="h-8">
                     <th></th>
                     <th class="bg-gray-200 my-8" colspan="2">2003</th>
@@ -23,7 +23,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="bg-gray-100">
                 <tr>
                     <td class="font-bold p-2">US Stock Market</td>
                     <td class="bg-gray-200">0.888</td>
@@ -265,5 +265,16 @@
 
 .asset-stats-table td {
     padding: 1rem;
+}
+
+.asset-stats-table tr {
+    background-color: inherit;
+}
+
+.asset-stats-table th:first-of-type,
+.asset-stats-table td:first-of-type {
+    left: 0;
+    position: sticky;
+    background-color: inherit;
 }
 </style>

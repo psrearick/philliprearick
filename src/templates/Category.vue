@@ -43,6 +43,11 @@ query Category ($id: ID!) {
                             summary
                             timeToRead
                             categories { title, id, path }
+                            image {
+                                path
+                                caption
+                                alt
+                            }
                         }
                     }
                 }

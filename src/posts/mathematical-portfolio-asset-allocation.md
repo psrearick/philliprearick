@@ -5,6 +5,10 @@ categories: [stocks, bonds, allocation, portfolio, investing, math]
 summary: How to calculate and optimize your investment portfolio assets
 date: "2022-08-01"
 timeToRead: 9
+image:
+    path: ../resources/images/thomas-t-OPpCbAAKWv8-unsplash.jpg
+    alt: "Math Formulas on a Chalkboard"
+    caption: 'Photo by <a href="https://unsplash.com/@pyssling240?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Thomas T</a> on <a href="https://unsplash.com/s/photos/equations?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
 import AssetClassStatsRanked from '~/components/tables/AssetClassStatsRanked.vue'

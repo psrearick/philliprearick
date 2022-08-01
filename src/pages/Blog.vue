@@ -31,6 +31,11 @@ query {
                 summary
                 date (format: "MMMM D, Y")
                 path
+                image {
+                    path
+                    caption
+                    alt
+                }
             }
         }
     }

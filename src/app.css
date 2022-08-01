@@ -46,4 +46,11 @@
     ol {
         @apply list-decimal ml-8 py-4
     }
+
+    .image-caption {
+        @apply mb-5 font-light text-sm text-gray-400;
+        & a {
+            @apply font-bold;
+        }
+    }
 }

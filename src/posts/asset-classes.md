@@ -5,6 +5,10 @@ categories: [stocks, bonds, diversification, investing]
 summary: What are asset classes and why do we use them
 date: "2022-07-31"
 timeToRead: 10
+image:
+    path: ../resources/images/laura-rivera-ArH3dtoDQc0-unsplash.jpg
+    alt: "Organized utensils"
+    caption: 'Photo by <a href="https://unsplash.com/@laurar1vera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Laura Rivera</a> on <a href="https://unsplash.com/s/photos/organization?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---
 Asset allocation is the specific distribution of asset types in your investment portfolio. When investing, you are spending money on things you hope will increase in value, which you will sell later. These "things" are assets. There are several different types of assets, or asset classes, each having two primary characteristics you care about: risk and return.
 

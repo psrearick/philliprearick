@@ -956,6 +956,15 @@
     "sort-package-json" "^1.15.0"
     "update-notifier" "^4.1.0"
 
+"@gridsome/plugin-sitemap@^0.4.0":
+  "integrity" "sha512-fAwC/7+jCM6uTx7m7cEHBeoZOuxkuXy9LCDS65VUiSMgelmMjQBcrsCBFWULaE65sl/wPB6eGRmCIG+d38L6Qw=="
+  "resolved" "https://registry.npmjs.org/@gridsome/plugin-sitemap/-/plugin-sitemap-0.4.0.tgz"
+  "version" "0.4.0"
+  dependencies:
+    "fs-extra" "^7.0.0"
+    "micromatch" "^3.1.10"
+    "sitemap" "^2.1.0"
+
 "@gridsome/source-filesystem@^0.6.2":
   "integrity" "sha512-K1pyXwFYIlABaHq3wqOPyYt4ARzLZuUQ+UZKjDSBT9I0T0qpCbwir5kJMQkR7qY4ONflUrv8fgG6DNSrc1uzbA=="
   "resolved" "https://registry.npmjs.org/@gridsome/source-filesystem/-/source-filesystem-0.6.2.tgz"
@@ -4804,6 +4813,13 @@
     "kind-of" "^6.0.2"
     "section-matter" "^1.0.0"
     "strip-bom-string" "^1.0.0"
+
+"gridsome-plugin-gtag@^0.1.10":
+  "integrity" "sha512-/T1snhRRO4akDx6Hi4rYpMtXo8jo8uEf0brHbOI6bbb+vg7XTFucEAOKklUdKFTLKFAwH1VIQ+AZajU88U6iHg=="
+  "resolved" "https://registry.npmjs.org/gridsome-plugin-gtag/-/gridsome-plugin-gtag-0.1.10.tgz"
+  "version" "0.1.10"
+  dependencies:
+    "vue-gtag" "^1.10.0"
 
 "gridsome-plugin-tailwindcss@^4.1.1":
   "integrity" "sha512-PlCY1oSdfrQ/DpLN8xK0oz4KYOA1Be6x34BiemhpF1X1JZ9FjnpR4bmQtv1HCvRQZM/UbZPso836UNTqKh/yCw=="
@@ -9144,6 +9160,15 @@
   dependencies:
     "is-arrayish" "^0.3.1"
 
+"sitemap@^2.1.0":
+  "integrity" "sha512-9Zoi3UBhSIt5jWENDRUbzsqLMJ+Fha3P2aQ2PRghmh0FOivtHsC4FAJdkAEKHvATajd74BWp/57Yh7kz/UA53Q=="
+  "resolved" "https://registry.npmjs.org/sitemap/-/sitemap-2.2.0.tgz"
+  "version" "2.2.0"
+  dependencies:
+    "lodash" "^4.17.10"
+    "url-join" "^4.0.0"
+    "xmlbuilder" "^10.0.0"
+
 "slash@^1.0.0":
   "integrity" "sha512-3TYDR7xWt4dIqV2JauJr+EJeW356RXijHeUlO+8djJ+uBXPn8/2dpzBc8yQhh583sVvc9CvFAeQVgijsH+PNNg=="
   "resolved" "https://registry.npmjs.org/slash/-/slash-1.0.0.tgz"
@@ -10280,6 +10305,11 @@
   "resolved" "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz"
   "version" "0.1.0"
 
+"url-join@^4.0.0":
+  "integrity" "sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA=="
+  "resolved" "https://registry.npmjs.org/url-join/-/url-join-4.0.1.tgz"
+  "version" "4.0.1"
+
 "url-loader@^1.1.2":
   "integrity" "sha512-dXHkKmw8FhPqu8asTc1puBfe3TehOCo2+RmOOev5suNCIYBcT626kxiWg1NBVkwc4rO8BGa7gP70W7VXuqHrjg=="
   "resolved" "https://registry.npmjs.org/url-loader/-/url-loader-1.1.2.tgz"
@@ -10477,6 +10507,11 @@
   "resolved" "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz"
   "version" "1.1.2"
 
+"vue-gtag@^1.10.0":
+  "integrity" "sha512-5vs0pSGxdqrfXqN1Qwt0ZFXG0iTYjRMu/saddc7QIC5yp+DKgjWQRpGYVa7Pq+KbThxwzzMfo0sGi7ISa6NowA=="
+  "resolved" "https://registry.npmjs.org/vue-gtag/-/vue-gtag-1.16.1.tgz"
+  "version" "1.16.1"
+
 "vue-hot-reload-api@^2.3.0":
   "integrity" "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog=="
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
@@ -10540,7 +10575,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2 || ^3.0.0-0", "vue@^2.6.10":
+"vue@*", "vue@^2 || ^3.0.0-0", "vue@^2.0.0", "vue@^2.6.10":
   "integrity" "sha512-ncwlZx5qOcn754bCu5/tS/IWPhXHopfit79cx+uIlLMyt3vCMGcXai5yCG5y+I6cDmEj4ukRYyZail9FTQh7lQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.8.tgz"
   "version" "2.7.8"
@@ -10744,6 +10779,11 @@
   "integrity" "sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q=="
   "resolved" "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz"
   "version" "4.0.0"
+
+"xmlbuilder@^10.0.0":
+  "integrity" "sha512-OyzrcFLL/nb6fMGHbiRDuPup9ljBycsdCypwuyg5AAHvyWzGfChJpCXMG88AGTIMFhGZ9RccFN1e6lhg3hkwKg=="
+  "resolved" "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-10.1.1.tgz"
+  "version" "10.1.1"
 
 "xss@^1.0.6":
   "integrity" "sha512-clu7dxTm1e8Mo5fz3n/oW3UCXBfV89xZ72jM8yzo1vR/pIS0w3sgB3XV2H8Vm6zfGnHL0FzvLJPJEBhd86/z4Q=="

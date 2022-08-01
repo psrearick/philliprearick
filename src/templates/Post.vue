@@ -32,6 +32,16 @@ query Post ($id: ID!) {
     categories { title, path }
     timeToRead
     date (format: "MMMM D, Y")
+    path
+    summary
   }
 }
 </page-query>
+
+<script>
+import SEO from '../mixins/SEO.vue'
+
+export default {
+  mixins: [SEO]
+}
+</script>

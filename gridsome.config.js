@@ -7,7 +7,14 @@ const tailwindcss = require("tailwindcss");
 
 module.exports = {
   siteName: 'Money with Phil',
+  siteDescription: 'Personal finance for the ordinary person',
   siteUrl: 'https://www.philliprearick.com',
+  // metadata: {
+  //   twitter: {
+  //     site: '@simon_mannes',
+  //     creator: '@simon_mannes'
+  //   }
+  // },
   css: {
     loaderOptions: {
       postcss: {
@@ -28,6 +35,14 @@ module.exports = {
     //     }
     //   }
     // },
+    {
+      use: 'gridsome-plugin-gtag',
+      options: {
+        config: {
+          id: 'G-55LD6YK92E',
+        },
+      },
+    },
     {
       use: '@gridsome/vue-remark',
       options: {
@@ -52,6 +67,12 @@ module.exports = {
         shouldTimeTravel: false
       }
     },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        exclude: ['/privacy', '/legal']
+      }
+    }
   ],
   templates: {
     // Post: [

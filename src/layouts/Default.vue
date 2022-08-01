@@ -42,6 +42,22 @@ query {
 }
 </static-query>
 
+<script>
+// ...
+
+export default {
+  metaInfo () {
+    return {
+      meta: [
+        { key: 'author', name: 'author', content: this.$static.metadata.author },
+        // { key: 'twitter:site', name: 'twitter:site', content: this.$static.metadata.twitter.site },
+        // { key: 'twitter:creator', name: 'twitter:creator', content: this.$static.metadata.twitter.creator }
+      ]
+    }
+  }
+}
+</script>
+
 <style>
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,

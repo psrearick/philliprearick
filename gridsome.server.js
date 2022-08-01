@@ -6,6 +6,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
+  api.loadSource(async store => {
+    store.addMetadata('author', 'Phillip Rearick')
+  });
   api.loadSource(actions => {
 
     //Create a new "categories" collection

@@ -1,13 +1,16 @@
 <template>
     <Layout>
-        <div class="flex justify-between">
-        <h1 v-html="$page.category.title" />
-        <div class="flex flex-col justify-center">
-            <p class="text-sm">
-                <g-link to="/blog" class="hover:no-underline border border-blue-400 rounded px-4 py-2 hover:border-blue-600 hover:text-blue-600">All Posts</g-link>
-            </p>
-        </div>
-        </div>
+        <template #header>
+            <div class="flex justify-between">
+                <h1 v-html="$page.category.title" />
+                <div class="flex flex-col justify-center">
+                    <p class="text-sm">
+                        <g-link to="/blog" class="hover:no-underline border border-blue-400 rounded px-4 py-2 hover:border-blue-600 hover:text-blue-600">All Posts</g-link>
+                    </p>
+                </div>
+            </div>
+        </template>
+
         <blog-list :posts="posts" />
     </Layout>
 </template>

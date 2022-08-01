@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-full">
-    <div class="layout w-full flex-1">
-      <header class="header">
+      <header class="bg-slate-300">
+        <div class="w-full flex justify-between items-center mb-5 h-20 max-w-4xl mx-auto px-5">
         <strong>
           <g-link to="/" class="text-gray-500 hover:no-underline">
             <g-image alt="Logo" src="~/favicon.png" width="45" class="mx-auto" />
@@ -9,11 +9,18 @@
           </g-link>
         </strong>
         <nav class="nav">
-          <g-link class="nav__link" to="/">Home</g-link>
-          <!-- <g-link class="nav__link" to="/about/">About</g-link> -->
-          <g-link class="nav__link" to="/blog">Blog</g-link>
+          <g-link class="ml-4" to="/">Home</g-link>
+          <!-- <g-link class="ml-4" to="/about/">About</g-link> -->
+          <g-link class="ml-4" to="/blog">Blog</g-link>
         </nav>
+        </div>
       </header>
+      <div class="bg-slate-300">
+        <div class="max-w-4xl mx-auto px-5">
+          <slot name="header" />
+        </div>
+      </div>
+    <div class="w-full flex-1 max-w-4xl mx-auto px-5 py-8">
       <slot />
     </div>
     <div class="py-8 bg-slate-300 mt-4">
@@ -54,35 +61,9 @@ export default {
         // { key: 'twitter:creator', name: 'twitter:creator', content: this.$static.metadata.twitter.creator }
       ]
     }
-  }
+  },
+  props: {
+    title: String,
+  },
 }
 </script>
-
-<style>
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>

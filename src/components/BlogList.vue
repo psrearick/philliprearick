@@ -2,7 +2,7 @@
     <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div v-for="(post, index) in posts" :key="index" class="my-2 flex flex-col bg-white rounded-md shadow-md">
             <g-link :to="post.path">
-                <g-image :alt="post.image.alt" :src="post.image.path" class="mb-2 h-36 object-cover rounded-t-md" />
+                <g-image :alt="post.image.alt" :src="post.image.path" class="mb-2 h-48 object-cover rounded-t-md" />
             </g-link>
             <div class="p-4">
                 <div class="flex-1">

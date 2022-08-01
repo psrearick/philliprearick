@@ -1,6 +1,5 @@
 <template>
   <Layout>
-
     <h1>Hi, I'm Phil!</h1>
 
     <p>
@@ -17,9 +16,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

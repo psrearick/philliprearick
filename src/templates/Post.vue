@@ -1,6 +1,13 @@
 <template>
-    <Layout>
-        <h1 v-html="$page.post.title" />
+    <Layout title="test">
+        <template #header>
+            <div class="pb-5">
+                <h1 v-html="$page.post.title" />
+                <span class="text-sm text-gray-500">
+                    {{ $page.post.summary }}
+                </span>
+            </div>
+        </template>
         <div class="flex flex-wrap gap-4 my-4">
             <g-link v-for="(category, catIndex) in $page.post.categories" :key="catIndex" class="
             text-xs
@@ -14,14 +21,14 @@
             hover:border-blue-600
         " :to="category.path">{{ category.title }}</g-link>
         </div>
-        <div class="flex gap-12">
+        <div class="flex gap-12 mb-6">
             <div>
                 <p class="text-xs text-gray-500">Published On</p>
-                <p class="text-sm font-bold">{{ $page.post.date }}</p>
+                <p class="text-sm font-bold -my-3">{{ $page.post.date }}</p>
             </div>
             <div>
                 <p class="text-xs text-gray-500">Read Time</p>
-                <p class="text-sm font-bold">{{ $page.post.timeToRead }} minutes</p>
+                <p class="text-sm font-bold -my-3">{{ $page.post.timeToRead }} minutes</p>
             </div>
         </div>
         <figure v-if="$page.post.image" class="flex flex-col">

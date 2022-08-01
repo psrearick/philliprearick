@@ -1,6 +1,10 @@
 <template>
     <Layout>
-        <h1 class="mb-4">All Posts</h1>
+        <template #header>
+            <div>
+                <h1>All Posts</h1>
+            </div>
+        </template>
         <BlogList :posts="posts" />
     </Layout>
 </template>

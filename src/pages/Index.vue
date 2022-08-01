@@ -34,6 +34,7 @@
         </p>
       </div>
       <div class="w-1/3">
+        <div class="bg-gray-50 p-4 shadow-lg rounded-lg">
         <g-image alt="Phillip Rearick" src="../resources/images/IMG_0852.JPG" class="rounded-full w-2/3 mx-auto" />
         <h2 class="text-center">Hi, I'm Phil!</h2>
         <p>
@@ -43,6 +44,7 @@
           Becoming more financially responsible does not need to be boring or scary. It's not only for those with degrees
           and fancy titles. Anyone can do it. It's something I have learned on my own and you can too!
         </p>
+        </div>
       </div>
     </div>
   </Layout>

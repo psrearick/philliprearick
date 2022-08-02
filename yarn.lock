@@ -938,6 +938,16 @@
   "resolved" "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
   "version" "1.4.0"
 
+"@fontsource/lato@^4.5.8":
+  "integrity" "sha512-IoSvhhzHsSzJu5XEOmDqzqcSmtfcJ788nz2TDgGXac076DApUsYIPHHBd0dh9guMBIVuHZ8Y2dlXNHFl4bCyLA=="
+  "resolved" "https://registry.npmjs.org/@fontsource/lato/-/lato-4.5.8.tgz"
+  "version" "4.5.8"
+
+"@fontsource/ubuntu@^4.5.10":
+  "integrity" "sha512-23RShv+KtrFTZveOh11yhFFwKfEC5k7DnOdSYSkVnZqcFoj98rpfIfhR6RoYORzDofr8zSOmZBHbfaamSZTnNg=="
+  "resolved" "https://registry.npmjs.org/@fontsource/ubuntu/-/ubuntu-4.5.10.tgz"
+  "version" "4.5.10"
+
 "@gridsome/cli@^0.3.4":
   "integrity" "sha512-KkfnDs3aDRdNapxS5QwCUDUzNJgc+uRExw5IRUrVn38zOdmJc0d8hFqHZ7GpcHEX1W0BVyUsa4sQ3LNyjlttsg=="
   "resolved" "https://registry.npmjs.org/@gridsome/cli/-/cli-0.3.4.tgz"

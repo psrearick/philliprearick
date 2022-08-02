@@ -1,19 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-import { blueGray, emerald } from 'tailwindcss/colors'
+const colors = require('tailwindcss/colors')
 
-export const purge = [
-  './src/**/*.vue',
-  './src/**/*.js',
-  './src/**/*.md',
-  './src/**/*.html',
-]
-export const content = []
-export const theme = {
-  extend: {
-    colors: {
-      slate: blueGray,
-      emerald: emerald,
+module.exports = {
+  purge: [
+    './src/**/*.vue',
+    './src/**/*.js',
+    './src/**/*.md',
+    './src/**/*.html',
+  ],
+  content: [],
+  theme: {
+    extend: {
+      colors: {
+        slate: colors.blueGray,
+        amber: colors.amber,
+        emerald: colors.emerald,
+        test: colors.slate,
+      }
     }
-  }
+  },
+  plugins: [],
 }
-export const plugins = []

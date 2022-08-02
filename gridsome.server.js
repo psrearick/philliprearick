@@ -6,38 +6,15 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(async store => {
-    store.addMetadata('author', 'Phillip Rearick')
-  });
-  api.loadSource(actions => {
+    api.loadSource(async (store) => {
+        store.addMetadata('author', 'Phillip Rearick');
+    });
 
-    //Create a new "categories" collection
-    const categories = actions.addCollection({
-      typeName: 'Category'
-    })
+    api.loadSource((actions) => {
+        actions.getCollection('Post').addReference('categories', 'Category');
+    });
 
-    //Get all the posts (which already exist from the vue-remark plugin)
-    const allPosts = actions.getCollection('Post')._collection.data
-    actions.getCollection('Post').addReference('categories', 'Category')
-
-    //Loop over the posts and add their categories to an array
-  //   let allPostsCategories = []
-  //   allPosts.forEach(post => allPostsCategories.push(...post.categories))
-
-  //   //Filter out duplicates
-  //   const uniqueCategories = new Set(allPostsCategories)
-
-  //   //Finally, add each category as a data node, with an array of the matching posts
-  //   uniqueCategories.forEach(category => {
-  //     categories.addNode({
-  //       title: category,
-  //       id: category,
-  //       posts: allPosts.filter(post => post.categories.includes(category))
-  //     })
-  //   })
-  })
-
-  api.createPages(({ createPage }) => {
+    // api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
-}
+    // });
+};

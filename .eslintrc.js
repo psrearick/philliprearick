@@ -1,28 +1,19 @@
 module.exports = {
-    "env": {
-        "node": true,
-        "browser": true,
-        "es2020": true
+    root: true,
+    parser: 'vue-eslint-parser',
+    plugins: ['gridsome'],
+    env: {
+        node: true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-recommended",
-        "plugin:prettier/recommended",
+    extends: [
+        'plugin:gridsome/recommended',
+        'plugin:vue/essential',
+        'plugin:prettier/recommended',
+        '@vue/prettier',
     ],
-    "parserOptions": {
-        parser: "@babel/eslint-parser",
-        "ecmaVersion": 11,
-        "requireConfigFile": false,
-        "sourceType": "module"
+    rules: {
+        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        "vue/multi-word-component-names": "off",
     },
-    "plugins": [
-        "vue"
-    ],
-    "rules": {
-        // we should always disable console logs and debugging in production
-        "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-        "vue/no-unused-components": "off",
-        "vue/no-v-html": "off",
-    },
-};
+}

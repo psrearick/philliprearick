@@ -1,6 +1,8 @@
 <template>
     <div class="asset-stats-table overflow-auto lg:-mx-24 max-h-screen">
-        <table class="text-xs text-center my-4 overflow-x-scroll table-auto w-full">
+        <table
+            class="text-xs text-center my-4 overflow-x-scroll table-auto w-full"
+        >
             <thead class="sticky top-0 z-10 bg-gray-100">
                 <tr class="h-8">
                     <th></th>

@@ -10,18 +10,18 @@
 </template>
 
 <script>
-import BlogList from '../components/BlogList.vue';
+import BlogList from '../components/BlogList.vue'
 export default {
     metaInfo: {
-        title: "Blog",
+        title: 'Blog',
     },
     components: { BlogList },
     computed: {
         posts() {
-            return this.$page.posts.edges.map((edge) => edge.node);
+            return this.$page.posts.edges.map((edge) => edge.node)
         },
-    }
-};
+    },
+}
 </script>
 
 <page-query>
@@ -31,9 +31,13 @@ query {
             node {
                 title
                 timeToRead
-                categories { title, id, path }
+                categories {
+                    title
+                    id
+                    path
+                }
                 summary
-                date (format: "MMMM D, Y")
+                date(format: "MMMM D, Y")
                 path
                 image {
                     path

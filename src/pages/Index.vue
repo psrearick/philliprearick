@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="flex gap-8">
+    <div class="md:flex gap-8">
       <div class="flex-1">
         <h2>Recent Posts</h2>
         <div class="flex flex-col gap-8 mb-8">
@@ -33,7 +33,7 @@
           See more posts on my <g-link to="/blog">Blog</g-link>
         </p>
       </div>
-      <div class="w-1/3">
+      <div class="md:w-1/3 mt-8 md:mt-0">
         <div class="bg-gray-50 p-4 shadow-lg rounded-lg">
         <g-image alt="Phillip Rearick" src="../resources/images/IMG_0852.JPG" class="rounded-full w-2/3 mx-auto" />
         <h2 class="text-center">Hi, I'm Phil!</h2>

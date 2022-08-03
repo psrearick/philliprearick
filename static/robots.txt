@@ -1,5 +1,6 @@
-Sitemap: https://philliprearick.com/sitemap.xml
-
 User-agent:*
+Allow: /
 Disallow: /legal
 Disallow: /privacy
+
+Sitemap: https://philliprearick.com/sitemap.xml

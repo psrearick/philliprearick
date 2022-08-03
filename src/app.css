@@ -16,19 +16,19 @@
     }
 
     h2 {
-        @apply text-2xl py-4 text-blue-600 italic;
+        @apply text-2xl py-4 text-slate-500 italic;
     }
 
     h3 {
-        @apply text-xl py-2 text-blue-600 italic;
+        @apply text-xl py-2 text-slate-500 italic;
     }
 
     h4 {
-        @apply text-lg font-semibold py-2 text-blue-600 italic;
+        @apply text-lg font-semibold py-2 text-slate-500 italic;
     }
 
     h5, h6 {
-        @apply text-blue-600 italic;
+        @apply text-slate-500 italic;
     }
 
     p {

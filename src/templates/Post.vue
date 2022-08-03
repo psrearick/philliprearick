@@ -13,15 +13,14 @@
                 v-for="(category, catIndex) in $page.post.categories"
                 :key="catIndex"
                 class="
-                    text-xs
-                    border border-blue-400
+                    text-xs text-secondary-400
+                    border border-secondary-400
                     rounded-full
                     py-1
                     px-4
                     hover:no-underline
-                    hover:bg-gray-200
-                    hover:text-blue-600
-                    hover:border-blue-600
+                    hover:text-secondary-600
+                    hover:border-secondary-600
                 "
                 :to="category.path"
                 >{{ category.title }}</g-link

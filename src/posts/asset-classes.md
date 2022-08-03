@@ -1,8 +1,7 @@
 ---
-title: Asset Classes Categorized by Type and Function
-# featuredMedia: projects/image.png
+title: What Are Asset Classes and Why Do We Use Them?
 categories: [stocks, bonds, diversification, investing]
-summary: What are asset classes and why do we use them
+summary: Asset Classes Categorized by Type and Function 
 date: "2022-07-31"
 timeToRead: 10
 image:

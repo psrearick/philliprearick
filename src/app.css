@@ -4,11 +4,11 @@
 
 @layer base {
     html {
-        @apply h-full
+        @apply h-full;
     }
 
     body {
-        @apply bg-slate-100 h-full
+        @apply bg-slate-100 h-full;
     }
 
     h1 {
@@ -16,35 +16,43 @@
     }
 
     h2 {
-        @apply text-2xl py-4;
+        @apply text-2xl py-4 text-blue-600 italic;
     }
 
     h3 {
-        @apply text-xl py-2
+        @apply text-xl py-2 text-blue-600 italic;
     }
 
     h4 {
-        @apply text-lg font-semibold py-2
+        @apply text-lg font-semibold py-2 text-blue-600 italic;
+    }
+
+    h5, h6 {
+        @apply text-blue-600 italic;
     }
 
     p {
-        @apply py-2
+        @apply py-2;
     }
 
     a {
-        @apply text-blue-400 hover:text-blue-600
+        @apply text-blue-600 hover:text-blue-800;
+    }
+
+    .main a {
+        @apply text-blue-600 hover:text-blue-800;
     }
 
     blockquote {
-        @apply border-l-4 border-blue-400 ml-4 my-2 p-4 bg-gray-200
+        @apply border-l-4 border-blue-400 ml-4 my-2 p-4 bg-gray-200;
     }
 
     ul {
-        @apply list-disc ml-8 py-4
+        @apply list-disc ml-8 py-4;
     }
 
     ol {
-        @apply list-decimal ml-8 py-4
+        @apply list-decimal ml-8 py-4;
     }
 
     .image-caption {

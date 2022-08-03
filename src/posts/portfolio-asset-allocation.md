@@ -1,6 +1,5 @@
 ---
 title: Portfolio Asset Allocation
-# featuredMedia: projects/image.png
 categories: [stocks, bonds, allocation, portfolio, investing]
 summary: How to allocate and optimize your investment portfolio assets
 date: "2022-07-30"

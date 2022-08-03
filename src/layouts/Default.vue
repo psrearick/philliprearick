@@ -7,7 +7,7 @@
                     flex
                     justify-between
                     items-center
-                    mb-5
+                    my-2
                     h-20
                     max-w-4xl
                     mx-auto
@@ -17,7 +17,14 @@
                 "
             >
                 <strong>
-                    <g-link to="/" class="text-gray-500 hover:no-underline">
+                    <g-link
+                        to="/"
+                        class="
+                            text-gray-800
+                            hover:no-underline
+                            hover:text-gray-800
+                        "
+                    >
                         <g-image
                             alt="Logo"
                             src="~/favicon.png"
@@ -39,7 +46,19 @@
                 <slot name="header" />
             </div>
         </div>
-        <div class="w-full flex-1 max-w-4xl mx-auto px-5 md:px-10 lg:px-5 py-8">
+        <div
+            class="
+                main
+                w-full
+                flex-1
+                max-w-4xl
+                mx-auto
+                px-5
+                md:px-10
+                lg:px-5
+                py-8
+            "
+        >
             <slot />
         </div>
         <div class="py-8 bg-slate-300 mt-4">

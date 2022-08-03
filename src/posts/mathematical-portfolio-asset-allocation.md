@@ -1,6 +1,5 @@
 ---
 title: The Mathematical Approach to Investment Portfolio Asset Allocation
-# featuredMedia: projects/image.png
 categories: [stocks, bonds, allocation, portfolio, investing, math]
 summary: How to calculate and optimize your investment portfolio assets
 date: "2022-08-01"

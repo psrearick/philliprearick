@@ -5,9 +5,9 @@ summary: How to allocate and optimize your investment portfolio assets
 date: "2022-07-30"
 timeToRead: 31
 image:
-    path: ../resources/images/towfiqu-barbhuiya-JhevWHCbVyw-unsplash.jpg
-    alt: "Close up of man hand using calculator."
-    caption: 'Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/s/photos/calculation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+    path: ../resources/images/iStock-1368290118.png
+    alt: "Asset Allocation Pie Chart"
+    caption: ''
 ---
 import AssetClassStats from '~/components/tables/AssetClassStats.vue'
 import AssetClassStatsRanked from '~/components/tables/AssetClassStatsRanked.vue'

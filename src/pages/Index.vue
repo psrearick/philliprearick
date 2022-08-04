@@ -84,7 +84,7 @@ export default {
 
 <page-query>
 query {
-    posts: allPost(sortBy: "date", order: DESC, limit: 2) {
+    posts: allPost(sortBy: "date", order: DESC, limit: 3) {
         edges {
             node {
                 title

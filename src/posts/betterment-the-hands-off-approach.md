@@ -1,7 +1,7 @@
 ---
 title: "Betterment: The Hands-Off Approach to Financial Freedom"
 categories: [betterment, software, investing, robo-advisors]
-summary: How can the Robo-Advisor Betterment can simplify your investing life
+summary: How the Robo-Advisor Betterment can simplify your investing life
 date: "2022-08-03"
 timeToRead: 6
 image:

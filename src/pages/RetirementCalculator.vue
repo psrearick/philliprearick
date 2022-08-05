@@ -125,22 +125,22 @@ export default {
 
     methods: {
         calculateA() {
-            this.resultA = formatCurrency(
-                (this.monthlyExpenses * 12) / (this.annualWithdrawalRate / 100)
-            );
+            let e = parseFloat(this.monthlyExpenses);
+            let r = parseFloat(this.annualWithdrawalRate);
+
+            this.resultA = formatCurrency((e * 12) / (r / 100));
         },
         calculateB() {
-            let a1 = 1 / (this.estimatedReturn / 100 / 12);
-            let a2 = this.payment * a1;
+            let r = parseFloat(this.estimatedReturn);
+            let pmt = parseFloat(this.payment);
+            let a = parseFloat(this.amountNeededToRetire);
+            let p = parseFloat(this.principle);
 
-            let a = Math.log(
-                (parseFloat(this.amountNeededToRetire) + a2) /
-                    (this.principle + a2)
-            );
+            let partial = pmt * (1 / (r / 100 / 12));
+            let partA = Math.log((a + partial) / (p + partial));
+            let partB = Math.log(1 + r / 100 / 12);
 
-            let b = Math.log(1 + this.estimatedReturn / 100 / 12);
-
-            this.resultB = (a / b / 12).toFixed(1);
+            this.resultB = (partA / partB / 12).toFixed(1);
         },
     },
 };

@@ -1,10 +1,10 @@
 <template>
-    <Layout>
+    <Layout @allPosts="setPosts">
         <div class="md:flex gap-8">
             <div class="flex-1">
                 <h2>Recent Posts</h2>
                 <div class="flex flex-col gap-8 mb-8">
-                    <div v-for="(post, index) in posts" :key="index">
+                    <div v-for="(post, index) in latestPosts" :key="index">
                         <g-link :to="post.path">
                             <g-image
                                 :alt="post.image.alt"
@@ -70,40 +70,12 @@
 </template>
 
 <script>
+import AllPosts from '../mixins/AllPosts.vue'
+
 export default {
     metaInfo: {
         title: 'Home',
     },
-    computed: {
-        posts() {
-            return this.$page.posts.edges.map((edge) => edge.node)
-        },
-    },
+    mixins: [AllPosts],
 }
 </script>
-
-<page-query>
-query {
-    posts: allPost(sortBy: "date", order: DESC, limit: 3) {
-        edges {
-            node {
-                title
-                timeToRead
-                categories {
-                    title
-                    id
-                    path
-                }
-                summary
-                date(format: "MMMM D, Y")
-                path
-                image {
-                    path
-                    caption
-                    alt
-                }
-            }
-        }
-    }
-}
-</page-query>

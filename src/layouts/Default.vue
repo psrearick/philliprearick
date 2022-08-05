@@ -85,6 +85,27 @@ query {
     metadata {
         siteName
     }
+    posts: allPost(sortBy: "date", order: DESC) {
+        edges {
+            node {
+                title
+                timeToRead
+                categories {
+                    title
+                    id
+                    path
+                }
+                summary
+                date(format: "MMMM D, Y")
+                path
+                image {
+                    path
+                    caption
+                    alt
+                }
+            }
+        }
+    }
 }
 </static-query>
 
@@ -107,6 +128,9 @@ export default {
     },
     props: {
         title: String,
+    },
+    created() {
+        this.$emit('allPosts', this.$static.posts)
     },
 }
 </script>

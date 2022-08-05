@@ -1,5 +1,5 @@
 <template>
-    <Layout title="test">
+    <Layout @allPosts="setPosts">
         <template #header>
             <div class="pb-5">
                 <h1 v-html="$page.post.title" />
@@ -77,9 +77,10 @@ query Post($id: ID!) {
 </page-query>
 
 <script>
+import AllPosts from '../mixins/AllPosts.vue'
 import SEO from '../mixins/SEO.vue'
 
 export default {
-    mixins: [SEO],
+    mixins: [SEO, AllPosts],
 }
 </script>

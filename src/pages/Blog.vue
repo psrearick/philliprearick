@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <Layout @allPosts="setPosts">
         <template #header>
             <div>
                 <h1>All Posts</h1>
@@ -11,41 +11,13 @@
 
 <script>
 import BlogList from '../components/BlogList.vue'
+import AllPosts from '../mixins/AllPosts.vue'
+
 export default {
     metaInfo: {
         title: 'Blog',
     },
+    mixins: [AllPosts],
     components: { BlogList },
-    computed: {
-        posts() {
-            return this.$page.posts.edges.map((edge) => edge.node)
-        },
-    },
 }
 </script>
-
-<page-query>
-query {
-    posts: allPost(sortBy: "date", order: DESC) {
-        edges {
-            node {
-                title
-                timeToRead
-                categories {
-                    title
-                    id
-                    path
-                }
-                summary
-                date(format: "MMMM D, Y")
-                path
-                image {
-                    path
-                    caption
-                    alt
-                }
-            }
-        }
-    }
-}
-</page-query>

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import crypto from 'crypto'
+import { v4 as uuidv4 } from 'uuid'
 
 export default {
     props: {
@@ -43,7 +43,7 @@ export default {
     },
 
     created() {
-        const uuid = crypto.randomUUID()
+        const uuid = uuidv4()
 
         this.$mitt.on(uuid, (response) => {
             this.post = response

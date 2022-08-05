@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import crypto from 'crypto'
+
 export default {
     props: {
         title: String,

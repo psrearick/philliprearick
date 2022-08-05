@@ -124,13 +124,13 @@ export default {
                 // { key: 'twitter:site', name: 'twitter:site', content: this.$static.metadata.twitter.site },
                 // { key: 'twitter:creator', name: 'twitter:creator', content: this.$static.metadata.twitter.creator }
             ],
-        }
+        };
     },
     props: {
         title: String,
     },
     created() {
-        this.$emit('allPosts', this.$static.posts)
+        this.$emit('allPosts', this.$static.posts);
     },
-}
+};
 </script>

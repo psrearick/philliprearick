@@ -2,7 +2,7 @@
     <ui-table :data="data" />
 </template>
 <script>
-import UiTable from './UiTable.vue'
+import UiTable from './UiTable.vue';
 export default {
     components: { UiTable },
     data() {
@@ -39,7 +39,7 @@ export default {
                     ],
                 ],
             },
-        }
+        };
     },
-}
+};
 </script>

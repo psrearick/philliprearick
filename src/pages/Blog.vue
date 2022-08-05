@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import BlogList from '../components/BlogList.vue'
-import AllPosts from '../mixins/AllPosts.vue'
+import BlogList from '../components/BlogList.vue';
+import AllPosts from '../mixins/AllPosts.vue';
 
 export default {
     metaInfo: {
@@ -19,5 +19,5 @@ export default {
     },
     mixins: [AllPosts],
     components: { BlogList },
-}
+};
 </script>

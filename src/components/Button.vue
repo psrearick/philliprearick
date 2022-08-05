@@ -25,7 +25,7 @@ export default {
                 text-primary-400
                 hover:border-primary-600
                 hover:text-primary-600
-            `
+            `;
 
             if (this.buttonStyle === 'secondary') {
                 styles = `
@@ -33,11 +33,11 @@ export default {
                     text-secondary-400
                     hover:border-secondary-600
                     hover:text-secondary-600
-                `
+                `;
             }
 
-            return styles
+            return styles;
         },
     },
-}
+};
 </script>

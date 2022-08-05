@@ -28,18 +28,18 @@
 </template>
 
 <script>
-import BlogList from '../components/BlogList.vue'
+import BlogList from '../components/BlogList.vue';
 export default {
     components: { BlogList },
     metaInfo() {
-        return { title: this.$page.category.title }
+        return { title: this.$page.category.title };
     },
     computed: {
         posts() {
-            return this.$page.category.belongsTo.edges.map((edge) => edge.node)
+            return this.$page.category.belongsTo.edges.map((edge) => edge.node);
         },
     },
-}
+};
 </script>
 
 <page-query>

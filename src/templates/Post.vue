@@ -77,10 +77,10 @@ query Post($id: ID!) {
 </page-query>
 
 <script>
-import AllPosts from '../mixins/AllPosts.vue'
-import SEO from '../mixins/SEO.vue'
+import AllPosts from '../mixins/AllPosts.vue';
+import SEO from '../mixins/SEO.vue';
 
 export default {
     mixins: [SEO, AllPosts],
-}
+};
 </script>

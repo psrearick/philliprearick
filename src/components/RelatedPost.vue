@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
     props: {
@@ -39,17 +39,17 @@ export default {
     data() {
         return {
             post: {},
-        }
+        };
     },
 
     created() {
-        const uuid = uuidv4()
+        const uuid = uuidv4();
 
         this.$mitt.on(uuid, (response) => {
-            this.post = response
-        })
+            this.post = response;
+        });
 
-        this.$mitt.emit('requestPost', { title: this.title, uuid: uuid })
+        this.$mitt.emit('requestPost', { title: this.title, uuid: uuid });
     },
-}
+};
 </script>

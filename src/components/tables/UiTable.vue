@@ -70,35 +70,35 @@ export default {
     methods: {
         boldCell: function (index) {
             if (!this.data.boldColumns) {
-                return ''
+                return '';
             }
 
             if (this.data.boldColumns.indexOf(index) > -1) {
-                return 'font-bold'
+                return 'font-bold';
             }
 
-            return ''
+            return '';
         },
         stickyCol: function (index) {
-            const stickyL = this.data.stickyLeftColumns
-            const stickyR = this.data.stickyRightColumns
+            const stickyL = this.data.stickyLeftColumns;
+            const stickyR = this.data.stickyRightColumns;
 
             if (!stickyL && !stickyR) {
-                return ''
+                return '';
             }
 
             if (stickyL && stickyL.indexOf(index) > -1) {
-                return 'sticky left-0'
+                return 'sticky left-0';
             }
 
             if (stickyR && stickyR.indexOf(index) > -1) {
-                return 'sticky right-0'
+                return 'sticky right-0';
             }
 
-            return ''
+            return '';
         },
     },
-}
+};
 </script>
 
 <style scoped>

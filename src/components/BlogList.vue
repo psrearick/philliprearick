@@ -43,5 +43,5 @@ export default {
     props: {
         posts: Array,
     },
-}
+};
 </script>

@@ -70,12 +70,12 @@
 </template>
 
 <script>
-import AllPosts from '../mixins/AllPosts.vue'
+import AllPosts from '../mixins/AllPosts.vue';
 
 export default {
     metaInfo: {
         title: 'Home',
     },
     mixins: [AllPosts],
-}
+};
 </script>

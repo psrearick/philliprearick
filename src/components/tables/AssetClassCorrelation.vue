@@ -2,7 +2,7 @@
     <ui-table :data="data" :wide="true" />
 </template>
 <script>
-import UiTable from './UiTable.vue'
+import UiTable from './UiTable.vue';
 export default {
     components: { UiTable },
     data() {
@@ -298,7 +298,7 @@ export default {
                     ],
                 ],
             },
-        }
+        };
     },
-}
+};
 </script>

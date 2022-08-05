@@ -41,7 +41,8 @@ export default {
     },
 
     created() {
-        const uuid = self.crypto.randomUUID()
+        const uuid = crypto.randomUUID()
+
         this.$mitt.on(uuid, (response) => {
             this.post = response
         })

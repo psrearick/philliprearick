@@ -9,7 +9,7 @@ image:
     alt: "Simple"
     caption: 'Photo by <a href="https://unsplash.com/@pablogamedev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pablo Arroyo</a> on <a href="https://unsplash.com/s/photos/easy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---
-import Button from '../components/Button';
+import UiButton from '../components/UiButton';
 
 If you have not started investing yet, now is the time. It is the only way to secure your financial future. You hear it always: the earlier you invest, the better. So, why don't people do it? Because it is difficult, complex, and time-consuming. Investing has a high barrier to entry, and financial advisors want to keep it that way. If you are in this position, you know you need to invest but have not started; where do you begin?
 
@@ -64,4 +64,4 @@ The Betterment website and app are both extremely user-friendly. They allow you 
 ## Application of Concepts
 If you are looking for a simple, hands-off approach to investing that still gives excellent returns, Betterment is the solution. If you want to be in control of your investments, making your calculations, allocations, and transactions, Betterment will seem to limit you. There are plenty of great reasons why you would want to have greater control in managing your investments than Betterment can offer. If these apply to you, I would suggest checking out [M1 Finance](https://m1.com). However, if you want something you can set up once and let it handle the rest for you, consider Betterment. Of course, you can use both, as well. Let Betterment take care of short-term investments for some goals, such as a car or house purchase, while handling your retirement funds yourself. It's up to you to decide how you want to use the tools available. Regardless of your choice, the sooner you start investing, the better.
 
-<Button class="text-center" button-style="secondary" text="Get Started with Betterment" href="https://www.betterment.com/" />
+<ui-button class="text-center" button-style="secondary" text="Get Started with Betterment" href="https://www.betterment.com/" />

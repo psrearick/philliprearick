@@ -38,6 +38,9 @@
                     <g-link class="ml-4" to="/">Home</g-link>
                     <!-- <g-link class="ml-4" to="/about/">About</g-link> -->
                     <g-link class="ml-4" to="/blog">Blog</g-link>
+                    <g-link class="ml-4" to="/retirement-calculator">
+                        Calculators
+                    </g-link>
                 </nav>
             </div>
         </header>

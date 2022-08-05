@@ -5,7 +5,11 @@
                 {{ text }}
             </button>
         </g-link>
-        <button v-else :class="'my-2 py-2 px-4 rounded' + getStyles()">
+        <button
+            v-else
+            :class="'my-2 py-2 px-4 rounded' + getStyles()"
+            @click="$emit('click')"
+        >
             {{ text }}
         </button>
     </div>
@@ -13,6 +17,7 @@
 
 <script>
 export default {
+    name: 'UiButton',
     props: {
         buttonStyle: String,
         text: String,

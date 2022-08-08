@@ -189,19 +189,21 @@
                 <ui-button text="Calculate" class="mt-4" @click="calculate" />
             </div>
             <div v-if="backtestLineChartOptions.series.length > 0">
-                <div>
-                    <chart :options="backtestLineChartOptions" />
-                </div>
-                <div class="md:flex mt-4 gap-4">
-                    <chart
-                        :options="successFailureChartOptions"
-                        class="md:w-1/2"
-                    />
-                    <chart
-                        :options="advancersDeclinersChartOptions"
-                        class="md:w-1/2"
-                    />
-                </div>
+                <client-only>
+                    <div>
+                        <chart :options="backtestLineChartOptions" />
+                    </div>
+                    <div class="md:flex mt-4 gap-4">
+                        <chart
+                            :options="successFailureChartOptions"
+                            class="md:w-1/2"
+                        />
+                        <chart
+                            :options="advancersDeclinersChartOptions"
+                            class="md:w-1/2"
+                        />
+                    </div>
+                </client-only>
             </div>
         </div>
     </Layout>
@@ -493,6 +495,7 @@ export default {
                     startingBalance: 0,
                     balance: 0,
                     returns: 0,
+                    safetyNet: 0,
                     year: results.year,
                     endYear: results.endYear,
                 };
@@ -506,8 +509,33 @@ export default {
 
             let requiredAmount =
                 (1 + year.inflationRate) * results.requiredAmount;
+
+            let balance = results.balance;
             let withdrawal = requiredAmount;
-            let balance = results.balance - withdrawal;
+            let safetyNet = results.safetyNet;
+
+            if (this.useSafetyNet && this.safetyNet > 0) {
+                if (year.spIndex < 0.04) {
+                    withdrawal = 0;
+                } else {
+                    const cpiRatio = this.calculateCPIRatio(
+                        this.lastYear,
+                        year.year
+                    );
+
+                    const net =
+                        this.startingBalance *
+                        cpiRatio *
+                        (this.safetyNet / 100);
+
+                    if (safetyNet < net) {
+                        balance = balance - (net - safetyNet);
+                        safetyNet = net;
+                    }
+                }
+            }
+
+            balance = results.balance - withdrawal;
 
             let returns = 0;
             returns += year.spReturnWithDividends * balance * (this.sp / 100);
@@ -530,6 +558,7 @@ export default {
                 requiredAmount,
                 withdrawal,
                 startingBalance,
+                safetyNet,
                 balance,
                 returns,
                 year: year.year,

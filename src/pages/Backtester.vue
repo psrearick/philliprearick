@@ -186,24 +186,22 @@
                         @input="checkSafetyNet"
                     />
                 </div>
-                <ui-button text="Calculate" class="mt-4" @click="calculate" />
+                <ui-button text="Calculate" class="my-4" @click="calculate" />
             </div>
             <div v-if="backtestLineChartOptions.series.length > 0">
-                <client-only>
-                    <div>
-                        <chart :options="backtestLineChartOptions" />
-                    </div>
-                    <div class="md:flex mt-4 gap-4">
-                        <chart
-                            :options="successFailureChartOptions"
-                            class="md:w-1/2"
-                        />
-                        <chart
-                            :options="advancersDeclinersChartOptions"
-                            class="md:w-1/2"
-                        />
-                    </div>
-                </client-only>
+                <div>
+                    <chart :options="backtestLineChartOptions" />
+                </div>
+                <div class="md:flex mt-4 gap-4">
+                    <chart
+                        :options="successFailureChartOptions"
+                        class="md:w-1/2"
+                    />
+                    <chart
+                        :options="advancersDeclinersChartOptions"
+                        class="md:w-1/2"
+                    />
+                </div>
             </div>
         </div>
     </Layout>
@@ -221,6 +219,7 @@ export default {
 
     data() {
         return {
+            analysis: null,
             data: [],
             firstYear: 0,
             lastYear: 0,
@@ -442,6 +441,8 @@ export default {
             let analysis = this.analyzeRequestedYears(calculations);
 
             this.processCharts(analysis);
+
+            this.analysis = analysis;
         },
         calculateCPIRatio: function (last, first) {
             const lastYearData = this.data.filter(
@@ -474,9 +475,15 @@ export default {
                 (this.startingBalance * (this.withdrawalRate / 100)) / cpiRatio;
             const balance = this.startingBalance / cpiRatio;
 
+            let safetyNet = 0;
+            if (this.useSafetyNet && this.safetyNet > 0) {
+                safetyNet = (this.safetyNet / 100) * balance;
+            }
+
             const results = {
                 requiredAmount,
                 balance,
+                safetyNet,
                 year: currentYear,
                 endYear: end,
             };
@@ -515,8 +522,17 @@ export default {
             let safetyNet = results.safetyNet;
 
             if (this.useSafetyNet && this.safetyNet > 0) {
-                if (year.spIndex < 0.04) {
+                if (year.spReturnWithoutDividends < 0.04) {
                     withdrawal = 0;
+
+
+                    let safetyNetWithdrawal = requiredAmount;
+                    if (safetyNet < requiredAmount) {
+                        safetyNetWithdrawal = safetyNet;
+                        withdrawal = requiredAmount - safetyNetWithdrawal;
+                    }
+
+                    safetyNet = safetyNet - safetyNetWithdrawal;
                 } else {
                     const cpiRatio = this.calculateCPIRatio(
                         this.lastYear,

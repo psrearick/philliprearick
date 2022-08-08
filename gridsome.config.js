@@ -9,6 +9,11 @@ module.exports = {
     siteName: 'Money with Phil',
     siteDescription: 'Personal finance for the ordinary person',
     siteUrl: 'https://www.philliprearick.com',
+    configureWebpack: {
+        output: {
+            globalObject: 'this',
+        },
+    },
     // metadata: {
     //   twitter: {
     //     site: '@simon_mannes',

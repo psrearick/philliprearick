@@ -18,9 +18,9 @@ module.exports = {
     css: {
         loaderOptions: {
             postcss: {
-                plugins: [tailwindcss]
-            }
-        }
+                plugins: [tailwindcss],
+            },
+        },
     },
     plugins: [
         // {
@@ -37,9 +37,9 @@ module.exports = {
             use: 'gridsome-plugin-gtag',
             options: {
                 config: {
-                    id: 'G-55LD6YK92E'
-                }
-            }
+                    id: 'G-55LD6YK92E',
+                },
+            },
         },
         {
             use: '@gridsome/vue-remark',
@@ -51,10 +51,10 @@ module.exports = {
                 refs: {
                     categories: {
                         typeName: 'Category',
-                        create: true
-                    }
-                }
-            }
+                        create: true,
+                    },
+                },
+            },
         },
         {
             use: 'gridsome-plugin-tailwindcss',
@@ -62,15 +62,15 @@ module.exports = {
                 tailwindConfig: './tailwind.config.js',
                 presetEnvConfig: {},
                 shouldImport: false,
-                shouldTimeTravel: false
-            }
+                shouldTimeTravel: false,
+            },
         },
         {
             use: '@gridsome/plugin-sitemap',
             options: {
-                exclude: ['/privacy', '/legal']
-            }
-        }
+                exclude: ['/privacy', '/legal'],
+            },
+        },
     ],
     templates: {
         // Post: [
@@ -82,13 +82,13 @@ module.exports = {
         Category: [
             {
                 path: '/category/:title',
-                component: 'src/templates/Category.vue'
-            }
-        ]
+                component: 'src/templates/Category.vue',
+            },
+        ],
     },
     transformers: {
         remark: {
             //Config options can be added here
-        }
-    }
+        },
+    },
 };

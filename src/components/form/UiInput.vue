@@ -49,8 +49,8 @@
                     :min="min"
                     :max="max"
                     :step="step"
-                    @input="$emit('input', $event.target.value)"
-                    @blur="$emit('blur', $event.target.value)"
+                    @input="$emit('input', formatReturn($event.target.value))"
+                    @blur="$emit('blur', formatReturn($event.target.value))"
                 />
                 <div
                     v-if="after"
@@ -126,6 +126,12 @@ export default {
                 return value;
             },
         },
+        returnFormatter: {
+            type: Function,
+            default: (value) => {
+                return value;
+            },
+        },
         disabled: {
             type: Boolean,
             default: false,
@@ -165,6 +171,9 @@ export default {
         },
     },
     methods: {
+        formatReturn(value) {
+            return this.returnFormatter(value);
+        },
         focus() {
             this.$refs.input.focus();
         },

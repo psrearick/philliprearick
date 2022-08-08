@@ -211,11 +211,16 @@
 import UiButton from '../components/UiButton';
 import UiInput from '../components/form/UiInput';
 import UiToggle from '../components/form/UiToggle';
-import { Chart } from 'highcharts-vue';
+// import { Chart } from 'highcharts-vue';
 import { formatCurrency } from '../shared/ConvertValue';
+// let Chart = {};
+
+// if (typeof window !== 'undefined') {
+//     let Chart = require('highcharts-vue');
+// }
 
 export default {
-    components: { UiInput, UiButton, UiToggle, Chart },
+    components: { UiInput, UiButton, UiToggle },
 
     data() {
         return {
@@ -347,6 +352,12 @@ export default {
                 },
             },
         };
+    },
+
+    created() {
+        if (typeof window !== 'undefined') {
+            this.$options.components['Chart'] = require('highcharts-vue').Chart;
+        }
     },
 
     mounted() {
@@ -524,7 +535,6 @@ export default {
             if (this.useSafetyNet && this.safetyNet > 0) {
                 if (year.spReturnWithoutDividends < 0.04) {
                     withdrawal = 0;
-
 
                     let safetyNetWithdrawal = requiredAmount;
                     if (safetyNet < requiredAmount) {

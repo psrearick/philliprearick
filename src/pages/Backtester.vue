@@ -1,10 +1,14 @@
 <template>
     <Layout>
-        <h2>Backtest Your Retirement Strategy</h2>
-        <p class="text-sm">
-            Backtest you strategy using historical stock and bond market data
-            available from {{ firstYear }} through {{ lastYear }}
-        </p>
+        <template #header>
+            <div class="pb-5">
+                <h2>Backtest Your Retirement Strategy</h2>
+                <p class="text-sm">
+                    Backtest you strategy using historical stock and bond market
+                    data available from {{ firstYear }} through {{ lastYear }}
+                </p>
+            </div>
+        </template>
         <div class="mt-8">
             <div>
                 <ui-input
@@ -188,7 +192,56 @@
                 </div>
                 <ui-button text="Calculate" class="my-4" @click="calculate" />
             </div>
-            <div v-if="backtestLineChartOptions.series.length > 0">
+            <div
+                v-if="backtestLineChartOptions.series.length > 0"
+                class="border-t border-gray-400"
+            >
+                <h2>Results</h2>
+                <div class="text-sm pb-8">
+                    <p>
+                        The {{ analysis.summary.tests }} possible
+                        {{ yearsInRetirement }} year periods within the
+                        available data revealed the following results.
+                    </p>
+                    <p>
+                        {{ analysis.summary.successful }} ({{
+                            (100 * analysis.summary.successRate).toFixed(2)
+                        }}%) outcomes succeeded (ended more than zero dollars).
+                    </p>
+                    <p>
+                        {{ analysis.summary.failed }} ({{
+                            (100 * analysis.summary.failureRate).toFixed(2)
+                        }}%) outcomes failed (ran out of money during the
+                        retirement period).
+                    </p>
+                    <p>
+                        {{ analysis.summary.gainers }} ({{
+                            (100 * analysis.summary.gainerRate).toFixed(2)
+                        }}%) outcomes ended with more than the started balance.
+                    </p>
+                    <p>
+                        {{ analysis.summary.losers }} ({{
+                            (100 * analysis.summary.loserRate).toFixed(2)
+                        }}%) outcomes ended between zero and the starting
+                        balance.
+                    </p>
+                    <p>
+                        The lowest result was {{ format(analysis.summary.min) }}
+                    </p>
+                    <p>
+                        The highest result was
+                        {{ format(analysis.summary.max) }}
+                    </p>
+                    <p>
+                        The average result was
+                        {{ format(analysis.summary.avg) }}
+                    </p>
+                    <p>
+                        The median result was
+                        {{ format(analysis.summary.median) }}
+                    </p>
+                </div>
+
                 <div>
                     <chart :options="backtestLineChartOptions" />
                 </div>
@@ -199,7 +252,7 @@
                     />
                     <chart
                         :options="advancersDeclinersChartOptions"
-                        class="md:w-1/2"
+                        class="mt-4 md:mt-0 md:w-1/2"
                     />
                 </div>
             </div>
@@ -211,13 +264,7 @@
 import UiButton from '../components/UiButton';
 import UiInput from '../components/form/UiInput';
 import UiToggle from '../components/form/UiToggle';
-// import { Chart } from 'highcharts-vue';
 import { formatCurrency } from '../shared/ConvertValue';
-// let Chart = {};
-
-// if (typeof window !== 'undefined') {
-//     let Chart = require('highcharts-vue');
-// }
 
 export default {
     components: { UiInput, UiButton, UiToggle },
@@ -375,8 +422,13 @@ export default {
     },
 
     methods: {
+        format: function (value) {
+            return formatCurrency(value);
+        },
         analyzeRequestedYears: function (calculations) {
             const dataset = [];
+
+            console.log(calculations);
 
             calculations.forEach((calculation) => {
                 const startingBalance = calculation[0].startingBalance;
@@ -386,7 +438,7 @@ export default {
                 const change = startingBalance - endingBalance;
                 const cpiRatio = this.calculateCPIRatio(
                     this.lastYear,
-                    calculation[0].year
+                    calculation[calculation.length - 1].year
                 );
                 const startingBalanceAdjusted = startingBalance * cpiRatio;
                 const endingBalanceAdjusted = endingBalance * cpiRatio;
@@ -420,6 +472,15 @@ export default {
 
             const summary = {};
 
+            const endingBalances = [];
+            dataset.forEach((item) => {
+                endingBalances.push(item.endingBalanceAdjusted);
+            });
+            const sorted = this.sorted(endingBalances);
+
+            summary.endingBalances = endingBalances;
+            summary.sorted = sorted;
+            summary.tests = dataset.length;
             summary.successful = dataset.filter(
                 (item) => item.successful
             ).length;
@@ -436,6 +497,10 @@ export default {
                     item.endingBalance > 0
             ).length;
             summary.loserRate = summary.losers / dataset.length;
+            summary.min = Math.max(0, sorted[0]);
+            summary.max = sorted[sorted.length - 1];
+            summary.median = this.median(endingBalances);
+            summary.avg = this.average(endingBalances);
 
             return {
                 dataset,
@@ -684,6 +749,23 @@ export default {
                 name: 'Decliners',
                 y: parseFloat(analysis.summary.loserRate.toFixed(2)),
             });
+        },
+        average: function (values) {
+            return values.reduce((a, b) => a + b) / values.length;
+        },
+        sorted: function (values) {
+            values.sort(function (a, b) {
+                return a - b;
+            });
+
+            return values;
+        },
+        median: function (values) {
+            var half = Math.floor(values.length / 2);
+
+            if (values.length % 2) return values[half];
+
+            return (values[half - 1] + values[half]) / 2.0;
         },
     },
 };

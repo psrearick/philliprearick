@@ -1,5 +1,9 @@
 <template>
     <Layout>
+        <div class="mb-4 bg-green-200 rounded shadow-md p-4">
+            Checkout the <g-link to="/backtester">Backtester Tool</g-link>!
+        </div>
+
         <h2>How Much Do You Need To Retire?</h2>
         <div class="md:flex gap-4">
             <div class="md:w-1/3">
